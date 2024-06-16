@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" />
     <meta name="author" />
-    <link rel="shortcut icon" href="{{asset('assets/images/iconk3.png')}}">
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{secure_asset('assets/images/iconk3.png')}}">
+    <link href="{{secure_asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet"
+        type="text/css" />
+    <link href="{{secure_asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{secure_asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 </head>
 
 <body style="background-color: #43a7f9">
@@ -29,7 +30,8 @@
                                     </div>
                                 </div>
                                 <div class="col-5 align-self-end">
-                                    <img src="{{asset('assets/images/profile-img.png')}}" alt="" class="img-fluid">
+                                    <img src="{{secure_asset('assets/images/profile-img.png')}}" alt=""
+                                        class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -38,7 +40,7 @@
                                 <a href="#" class="auth-logo-light">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{asset('admin/assets/images/logo-light.svg')}}" alt=""
+                                            <img src="{{secure_asset('admin/assets/images/logo-light.svg')}}" alt=""
                                                 class="rounded-circle" height="34">
                                         </span>
                                     </div>
@@ -47,7 +49,7 @@
                                 <a href="#" class="auth-logo-dark">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{asset('admin/assets/images/logo.svg')}}" alt=""
+                                            <img src="{{secure_asset('admin/assets/images/logo.svg')}}" alt=""
                                                 class="rounded-circle" height="34">
                                         </span>
                                     </div>
@@ -131,12 +133,12 @@
             </div>
         </div>
     </div>
-    <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
-    <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
-    <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
-    <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{secure_asset('assets/libs/jquery/jquery.min.js')}}"></script>
+    <script src="{{secure_asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{secure_asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
+    <script src="{{secure_asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{secure_asset('assets/libs/node-waves/waves.min.js')}}"></script>
+    <script src="{{secure_asset('assets/js/app.js')}}"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script>
     $(document).ready(function() {

@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
-                                <img src="{{asset('assets/images/profile-img.png')}}" alt="" class="img-fluid">
+                                <img src="{{secure_asset('assets/images/profile-img.png')}}" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>

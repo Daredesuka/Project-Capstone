@@ -83,13 +83,13 @@
 </div>
 @endsection
 @push('script')
-<script src="{{asset('assets/libs/select2/js/select2.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
-<script src="{{asset('assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
-<script src="{{asset('assets/libs/%40chenfengyuan/datepicker/datepicker.min.js')}}"></script>
-<script src="{{asset('assets/js/pages/form-advanced.init.js')}}"></script>
+<script src="{{secure_asset('assets/libs/select2/js/select2.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/%40chenfengyuan/datepicker/datepicker.min.js')}}"></script>
+<script src="{{secure_asset('assets/js/pages/form-advanced.init.js')}}"></script>
 
 @endpush

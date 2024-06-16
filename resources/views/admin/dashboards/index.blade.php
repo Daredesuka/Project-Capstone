@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
-                                <img src="{{asset('assets/images/profile-img.png')}}" alt="" class="img-fluid">
+                                <img src="{{secure_asset('assets/images/profile-img.png')}}" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -198,14 +198,14 @@ $report1[] = $row->pay_total;
 
 @endsection
 @push('script')
-<script src="{{asset('assets/libs/select2/js/select2.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
-<script src="{{asset('assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
-<script src="{{asset('assets/libs/%40chenfengyuan/datepicker/datepicker.min.js')}}"></script>
-<script src="{{asset('assets/js/pages/form-advanced.init.js')}}"></script>
+<script src="{{secure_asset('assets/libs/select2/js/select2.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/spectrum-colorpicker2/spectrum.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/%40chenfengyuan/datepicker/datepicker.min.js')}}"></script>
+<script src="{{secure_asset('assets/js/pages/form-advanced.init.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"> </script>
 <script>
 var ctx = document.getElementById('myChartt').getContext('2d');

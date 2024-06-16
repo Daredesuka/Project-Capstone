@@ -1,13 +1,13 @@
 @extends('admin.layouts.main')
 @section('title','History Report | CSR')
 @section('css')
-<link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
+<link href="{{secure_asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
     type="text/css" />
-<link href="{{asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet"
+<link href="{{secure_asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet"
     type="text/css" />
-<link href="{{asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet"
-    type="text/css" />
-<link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{secure_asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}"
+    rel="stylesheet" type="text/css" />
+<link href="{{secure_asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 <div class="page-content">
@@ -126,12 +126,12 @@
 
 @endsection
 @push('script')
-<script src="{{asset('assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>
-<script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{secure_asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{secure_asset('assets/js/pages/datatables.init.js')}}"></script>
+<script src="{{secure_asset('assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 <script>
 $('.btn-delete').click(function() {
     var paket_id = $(this).attr('paket-id');
