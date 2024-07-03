@@ -41,11 +41,20 @@ class FrontendController extends Controller
         $report->kategori_bahaya = $request->kategori_bahaya;
         $report->lokasi_kejadian = $request->lokasi_kejadian;
 
-        $photo = $request->file('photo');
-        $tujuan_upload = 'avatar_report';
-        $photo_name = time() . "_" . $photo->getClientOriginalName();
-        $photo->move($tujuan_upload, $photo_name);
-        $report->photo = $photo_name;
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photo_name = time() . '_' . uniqid() . '.' . $photo->extension(); // atau bisa juga $photo->getClientOriginalExtension()
+        
+            // Simpan file dengan nama yang telah ditentukan di folder 'avatar_report' di disk S3
+            $path = $photo->storeAs('avatar_report', $photo_name, 's3');
+        
+            // Atur nama file ke atribut 'photo' pada model 'Report'
+            $report->photo = $photo_name;
+        
+            // Set file menjadi publik agar bisa diakses melalui URL
+            Storage::disk('s3')->setVisibility($path, 'public');
+        }
+        
         
         $report->status = '0';
         $report->date_report = Date::now()->format('Y-m-d');

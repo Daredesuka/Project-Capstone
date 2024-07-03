@@ -110,7 +110,7 @@
                                                 <tr>
                                                     <td>Photo</td>
                                                     <td>
-                                                        <img src="{{ url('avatar_report/', $report->photo) }}"
+                                                        <img src="{{ Storage::disk('s3')->url('avatar_report/' . $report->photo) }}"
                                                             width="500px">
                                                     </td>
                                                 </tr>

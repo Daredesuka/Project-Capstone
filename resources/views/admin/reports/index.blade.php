@@ -60,7 +60,8 @@
                                 @foreach ($reports as $row)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td><img src="{{url('avatar_report/',$row->photo)}}" width="100px"></td>
+                                    <td><img src="{{ Storage::disk('s3')->url('avatar_report/' . $row->photo) }}"
+                                            width="100px"></td>
                                     <td>{{$row->name}}</td>
                                     <td>{{date('d F Y H:i:s',strtotime($row->created_at))}}</td>
                                     @if ($row->status == "0")

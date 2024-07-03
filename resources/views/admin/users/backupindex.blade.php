@@ -85,8 +85,8 @@
                                     @if ($row->photo == NULL)
                                     <td><span class="badge rounded-pill bg-danger">Emtpy</span></td>
                                     @else
-                                    <td><img class="rounded-circle avatar-xs" src="{{ url('/avatar/'.$row->photo) }}">
-                                    </td>
+                                    <td><img src="{{ Storage::disk('s3')->url('avatar/' . $row->photo) }}"
+                                            width="100px"></td>
                                     @endif
                                     <td>{{$row->officer_name}}</td>
                                     <td>{{$row->email}}</td>

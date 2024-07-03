@@ -6,6 +6,7 @@ use App\Models\Level;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
@@ -38,11 +39,21 @@ class UsersController extends Controller
         $user->username = $request->username;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $photo = $request->file('photo');
-        $tujuan_upload = 'avatar';
-        $photo_name = time() . "_" . $photo->getClientOriginalName();
-        $photo->move($tujuan_upload, $photo_name);
-        $user->photo = $photo_name;
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photo_name = time() . '_' . uniqid() . '.' . $photo->extension(); // atau bisa juga $photo->getClientOriginalExtension()
+        
+            // Simpan file dengan nama yang telah ditentukan di folder 'avatar_report' di disk S3
+            $path = $photo->storeAs('avatar', $photo_name, 's3');
+        
+            // Atur nama file ke atribut 'photo' pada model 'Report'
+            $user->photo = $photo_name;
+        
+            // Set file menjadi publik agar bisa diakses melalui URL
+            Storage::disk('s3')->setVisibility($path, 'public');
+        }
+        
         $user->phone_number = $request->phone_number;
         $user->level_id = $request->level_id;
         $user->save();
@@ -83,14 +94,20 @@ class UsersController extends Controller
         if ($request->get('password') != '') {
             $user->password = Hash::make($request->password);
         }
-        if ($request->file('photo') != '') {
-            File::delete('avatar/' . $user->photo);
+        if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
-            $tujuan_upload = 'avatar';
-            $photo_name = time() . "_" . $photo->getClientOriginalName();
-            $photo->move($tujuan_upload, $photo_name);
+            $photo_name = time() . '_' . uniqid() . '.' . $photo->extension(); // atau bisa juga $photo->getClientOriginalExtension()
+        
+            // Simpan file dengan nama yang telah ditentukan di folder 'avatar_report' di disk S3
+            $path = $photo->storeAs('avatar', $photo_name, 's3');
+        
+            // Atur nama file ke atribut 'photo' pada model 'Report'
             $user->photo = $photo_name;
+        
+            // Set file menjadi publik agar bisa diakses melalui URL
+            Storage::disk('s3')->setVisibility($path, 'public');
         }
+        
         $user->phone_number = $request->phone_number;
         $user->level_id = $request->level_id;
         $result = $user->save();
